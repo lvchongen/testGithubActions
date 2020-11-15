@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
-        run:
+        run: |
           echo "Hello Github Actions"

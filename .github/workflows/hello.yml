@@ -1,0 +1,12 @@
+name: Hello Github Actions
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    run:
+      echo Hello Githu Actions

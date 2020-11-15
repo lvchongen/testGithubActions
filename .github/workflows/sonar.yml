@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  Backend Trigger:
+  backend_trigger:
     name: Scan backend code for FD
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
         projectName: "my-custom-project-name"
         projectVersion: "v0.0.1"
 
-  Front Trigger:
+  front_trigger:
     name: Scan front code for FD
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,38 @@
+name: SonarQube_FabricDirector
+
+on: 
+  push:
+    branches:
+      - main
+
+
+jobs:
+  Backend Trigger:
+    name: Scan backend code for FD
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Scan Python for FD
+      uses: kitabisa/sonarqube-action@master
+      with:
+        host: ${{ secrets.SONARQUBE_HOST }}
+        login: ${{ secrets.SONARQUBE_TOKEN }}
+        projectBaseDir: "/path/to/my-custom-project"
+        projectKey: "my-custom-project"
+        projectName: "my-custom-project-name"
+        projectVersion: "v0.0.1"
+
+  Front Trigger:
+    name: Scan front code for FD
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Scan JS for FD
+      uses: kitabisa/sonarqube-action@master
+      with:
+        host: ${{ secrets.SONARQUBE_HOST }}
+        login: ${{ secrets.SONARQUBE_TOKEN }}
+        projectBaseDir: "/path/to/my-custom-project"
+        projectKey: "my-custom-project"
+        projectName: "my-custom-project-name"
+        projectVersion: "v0.0.1"
